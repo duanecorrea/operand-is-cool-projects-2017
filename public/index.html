@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang=pt-br>
+<head>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+</head>
+<body>
+
+	<div class="container-fluid">
+		<div id="vueTitle" class="page-header">
+	  		<h1 >Operand<small> is cool</small>{{ mensagem }}</h1>
+		</div>	  
+		<divc class="row">
+			<div class="col-xs-12">
+				<button class="btn btn-success pull-right" data-toggle="modal" data-target="#modalDeposito">Depositar</button>				
+				<button class="btn btn-danger pull-right" data-toggle="modal" data-target="#modalSacar">Sacar</button>				
+				<button class="btn btn-success pull-right" data-toggle="modal" data-target="#modalNovaConta">Nova Conta</button>				
+				<button class="btn btn-danger pull-right" data-toggle="modal" data-target="#modalDeletaConta">Deleta Conta</button>				
+			</div>			
+		</div>
+		<div class="row">
+			<div class="col-xs-6">
+				<div class="panel panel-default">
+				  <div class="panel-heading">
+				    <h3 class="panel-title">Conta Bancária</h3>
+				  </div>
+				  <div class="panel-body">	
+					<table class="table table-rover">
+						<thead>
+							<tr>
+								<td>#</td>
+								<td>Operação</td>
+								<td>Data</td>
+								<td>valor</td>
+							</tr>
+						</thead>	
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>Depósito</td>
+								<td>18/07/2017</td>
+								<td>R$ 100.00</td>
+							</tr>							
+						</tbody>					
+					</table>				  
+				  </div>
+				</div>				
+			</div>		
+			<div class="col-xs-6">
+				<div class="panel panel-default">
+				  <div class="panel-heading">
+				    <h3 class="panel-title">Conta Bancária</h3>
+				  </div>
+				  <div class="panel-body">
+				    
+				  </div>
+				</div>				
+			</div>				
+		</div>
+
+		<div class="modal fade" id="modalDeposito" tabindex="-1" role="dialog">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title">Fazer depósito</h4>
+		      </div>
+		      <div class="modal-body">
+		      	 <div class="form-group">
+		      	 	<label>Conta Bancária</label>		      	 	
+	      	 		<select class="form-control">
+	      	 			<option>Conta 1</option>
+	      	 			<option>Conta 2</option>		      	 			
+	      	 		</select>
+		      	 </div>
+		         <div class="form-group">
+				    <label for="depositValue">Valor do depósito</label>
+				    <input type="text" class="form-control mask-money" id="depositValue" placeholder="0,00">				    
+				 </div>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        <button type="button" class="btn btn-primary" data-dismiss="modal">Save and Close</button>
+		      </div>
+		    </div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+
+		<div class="modal fade" id="modalSacar" tabindex="-1" role="dialog">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title">Fazer Saque</h4>
+		      </div>
+		      <div class="modal-body">
+		        <p>One fine body&hellip;</p>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        <button type="button" class="btn btn-primary" data-dismiss="modal">Save and Close</button>
+		      </div>
+		    </div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+
+		<div class="modal fade" id="modalNovaConta" tabindex="-1" role="dialog">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title">Nova Conta</h4>
+		      </div>
+		      <div class="modal-body">
+		        <label for="novaConta">Conta</label>
+			    <input type="text" class="form-control" id="novaConta" placeholder="">
+			    <label for="valorConta">Valor da Conta</label>
+				    <input type="text" class="form-control mask-money" id="valorConta" placeholder="0,00">
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        <button type="button" class="btn btn-primary" id="btnSaveNewAcc" data-dismiss="modal">Salva e Fecha</button>
+		      </div>
+		    </div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+
+		<div class="modal fade" id="modalDeletaConta" tabindex="-1" role="dialog">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title">Deleta Conta?</h4>
+		      </div>
+		      <div class="modal-body">
+		        
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
+		        <button type="button" class="btn btn-primary" id="btnDelSim" data-dismiss="modal">Sim</button>
+		      </div>
+		    </div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+	</div>
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>	
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>		
+	<script type="text/javascript" src="https:/unpkg.com/axios/dist/axios.min.js"></script>
+
+	<script src="https://unpkg.com/vue/dist/vue.js" ></script>
+	<script type="text/javascript" src="./vueIndex.js"></script>
+
+	<script type="text/javascript" src="./index.js"></script>
+
+</body>
